@@ -1,0 +1,20 @@
+<div class="row">
+<% @tasks.each do |task| %>
+<div class="card col-sm-3 text-center p-3" >
+  <img src="<%= task.photo %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= task.title%></h5>
+    <% if user_signed_in? %>
+    <% if current_user.user_tasks.pluck(:task_id).include? task.id%>
+     <%= link_to 'No listo!',  remove_task_path(task), method: :delete, class: 'btn btn-danger btn-lg btn-block'%>
+    <% else %>
+     <%= link_to 'Listo!', task_user_tasks_path(task), method: :post, class: 'btn btn-primary btn-lg btn-block'%>
+    <%end%>
+    <%else %>
+         <%= link_to 'Listo!', task_user_tasks_path(task), method: :post, class: 'btn btn-primary btn-lg btn-block'%>
+    <% end %>
+    <a href="<%= task_path(task)%>" class="btn btn-info btn-lg btn-block">Detalles!</a>
+  </div>
+</div>
+<%end%>
+</div>

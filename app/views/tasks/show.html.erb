@@ -1,0 +1,10 @@
+<h4 class="text-center pt-3">Detalles de la actividad: <%= @task.title %>!!</h4>
+<ul class="list-group text-center">
+<strong class="text-center">Usuarios con tarea completada:</strong>
+<% @usertasks.each do |usertask| %>
+<li class="list-group-item text-center list-group-item-success pt-2">Usuario: <%= usertask.user.email%></li>
+<% end %>
+</ul>
+
+<%= link_to 'Regresar', root_path, class: 'btn btn-secondary'%>
+

@@ -1,0 +1,8 @@
+2019-02-14 10:43:56.280 -03 [885] LOG:  listening on IPv6 address "::1", port 5432
+2019-02-14 10:43:56.280 -03 [885] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-02-14 10:43:56.281 -03 [885] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-02-14 10:43:56.559 -03 [886] LOG:  database system was shut down at 2019-02-14 01:12:03 -03
+2019-02-14 10:43:56.573 -03 [885] LOG:  database system is ready to accept connections
+2019-02-14 14:41:57.561 -03 [10040] ERROR:  operator does not exist: bigint = name at character 57
+2019-02-14 14:41:57.561 -03 [10040] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2019-02-14 14:41:57.561 -03 [10040] STATEMENT:  SELECT  "user_tasks".* FROM "user_tasks" WHERE (user_id = current_user and task_id = task) LIMIT $1
